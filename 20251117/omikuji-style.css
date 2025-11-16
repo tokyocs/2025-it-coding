@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    color: #f5576c;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.result-box {
+    background-color: #fff9e6;
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    padding: 40px 20px;
+    margin: 20px 0;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.result-text {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.draw-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.draw-btn:hover {
+    background-color: #ff5252;
+    transform: scale(1.1);
+}
+
+/* 結果ごとの色 */
+.daikichi {
+    background-color: #ffe6e6;
+    border-color: #ff0000;
+}
+
+.chukichi {
+    background-color: #fff0e6;
+    border-color: #ff9900;
+}
+
+.kichi {
+    background-color: #e6f7ff;
+    border-color: #0099ff;
+}
+
+.suekichi {
+    background-color: #f0f0f0;
+    border-color: #999999;
+}
+
+.kyo {
+    background-color: #e6e6ff;
+    border-color: #6666ff;
+}
+
+/* アニメーション */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin 0.5s ease-in-out;
+}
+
