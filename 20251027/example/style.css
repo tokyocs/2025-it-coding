@@ -1,0 +1,60 @@
+/* ページ全体の設定 */
+body {
+    background-color: #f0f8ff; /* 背景色：うすい青 */
+    color: #333333; /* 文字色：こい灰色 */
+    font-size: 16px; /* 文字の大きさ：16ピクセル */
+    padding: 20px;
+}
+
+/* メインのタイトル */
+h1 {
+    color: #ff6b6b; /* 文字色：ピンク */
+    font-size: 36px; /* 文字の大きさ：36ピクセル */
+    text-align: center; /* 中央ぞろえ */
+}
+
+/* 自己紹介文 */
+.introduction {
+    color: #4a4a4a; /* 文字色：灰色 */
+    font-size: 18px; /* 文字の大きさ：18ピクセル */
+    text-align: center;
+}
+
+/* ボックス1のスタイル */
+.box1 {
+    background-color: #add8e6; /* 背景色：明るい青 */
+    color: #000080; /* 文字色：こい青 */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px; /* 角を丸くする */
+}
+
+/* ボックス2のスタイル */
+.box2 {
+    background-color: #90ee90; /* 背景色：明るい緑 */
+    color: #006400; /* 文字色：こい緑 */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* ボックス3のスタイル */
+.box3 {
+    background-color: #ffe4b5; /* 背景色：うすいオレンジ */
+    color: #8b4513; /* 文字色：茶色 */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* 大きい文字 */
+.big-text {
+    font-size: 24px; /* 文字の大きさ：24ピクセル */
+    font-weight: bold; /* 太字にする */
+}
+
+/* 小さい文字 */
+.small-text {
+    font-size: 12px; /* 文字の大きさ：12ピクセル */
+}
+
