@@ -1,0 +1,133 @@
+/* ホームページ専用のスタイル */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.feature-card code {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* デモセクション */
+.demo-section {
+    background-color: #fff8f0;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+.demo-section h2 {
+    text-align: center;
+    color: #764ba2;
+    margin-bottom: 10px;
+}
+
+.demo-section > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.interactive-card {
+    position: relative;
+    height: 200px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.interactive-card .card-front,
+.interactive-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.interactive-card .card-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.interactive-card .card-back {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.interactive-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.interactive-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+.interactive-card h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.interactive-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .feature-grid,
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

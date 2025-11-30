@@ -1,0 +1,151 @@
+/* 説明ページ専用のスタイル */
+
+.explanation-section {
+    margin: 30px 0;
+}
+
+.reason-card {
+    background-color: #f9f9f9;
+    border-left: 5px solid #764ba2;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.reason-card h3 {
+    color: #764ba2;
+    margin-bottom: 15px;
+}
+
+.reason-card p {
+    margin: 10px 0;
+}
+
+.code-box {
+    background-color: white;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.code-box p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.code-box code {
+    display: block;
+    margin: 5px 0;
+    background-color: #f7f7f7;
+    padding: 8px 12px;
+}
+
+.note {
+    background-color: #fff8e6;
+    border-left: 3px solid #ffc107;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-style: italic;
+    color: #666;
+}
+
+/* パス参照セクション */
+.path-reference {
+    background-color: #f0f8ff;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.path-example {
+    background-color: white;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.path-example h3 {
+    color: #764ba2;
+    margin-bottom: 15px;
+}
+
+.path-example code {
+    display: block;
+    background-color: #f7f7f7;
+    padding: 12px;
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+.path-explanation {
+    background-color: #fff8e6;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.path-explanation::before {
+    content: "📍 ";
+}
+
+/* 比較テーブル */
+.comparison-table {
+    margin: 40px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
+    
+    .path-example code {
+        font-size: 12px;
+        overflow-x: auto;
+    }
+}
+

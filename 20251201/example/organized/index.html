@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整理された構成 - サンプル</title>
+    <!-- cssフォルダの中のCSSを読み込む -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📁 整理された構成</h1>
+        <p>このプロジェクトは、ファイルをフォルダで整理しています。</p>
+        
+        <div class="info-box">
+            <h2>フォルダ構成：</h2>
+            <pre>
+organized/
+├── index.html     ← このファイル
+├── css/
+│   └── style.css  ← スタイル
+├── js/
+│   └── script.js  ← プログラム
+└── images/
+    └── （画像ファイル）
+            </pre>
+        </div>
+        
+        <div class="path-examples">
+            <h2>📝 パスの書き方：</h2>
+            <div class="code-example">
+                <p><strong>CSSの読み込み：</strong></p>
+                <code>&lt;link rel="stylesheet" href="<span class="highlight">css/</span>style.css"&gt;</code>
+            </div>
+            <div class="code-example">
+                <p><strong>JavaScriptの読み込み：</strong></p>
+                <code>&lt;script src="<span class="highlight">js/</span>script.js"&gt;&lt;/script&gt;</code>
+            </div>
+            <div class="code-example">
+                <p><strong>画像の読み込み：</strong></p>
+                <code>&lt;img src="<span class="highlight">images/</span>photo.jpg"&gt;</code>
+            </div>
+        </div>
+        
+        <div class="button-area">
+            <p>カウンターを試してみよう：</p>
+            <div class="counter-display">
+                <p id="counter">0</p>
+            </div>
+            <div class="button-group">
+                <button id="plusButton" class="btn btn-plus">＋</button>
+                <button id="minusButton" class="btn btn-minus">－</button>
+                <button id="resetButton" class="btn btn-reset">リセット</button>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h3>💡 ポイント：</h3>
+            <ul>
+                <li>中規模のプロジェクトに向いています</li>
+                <li>ファイルの種類ごとに整理されている</li>
+                <li>どこに何があるか分かりやすい</li>
+                <li>パスはフォルダ名も含めて書く（例：css/style.css）</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- jsフォルダの中のJavaScriptを読み込む -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+

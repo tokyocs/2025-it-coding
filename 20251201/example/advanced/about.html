@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>発展的な構成 - 説明</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <h2 class="nav-title">📚 発展的な構成</h2>
+            <ul class="nav-links">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html" class="active">説明</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>📖 ファイル構成の説明</h1>
+            <p>発展的な構成について詳しく説明します。</p>
+        </header>
+        
+        <div class="explanation-section">
+            <h2>なぜこの構成を使うの？</h2>
+            
+            <div class="reason-card">
+                <h3>1. 共通のスタイルを再利用できる</h3>
+                <p><code>common.css</code> に書いたスタイルは、すべてのページで使えます。</p>
+                <div class="code-box">
+                    <p><strong>index.html：</strong></p>
+                    <code>&lt;link href="assets/css/common.css"&gt;</code>
+                    <p><strong>about.html：</strong></p>
+                    <code>&lt;link href="assets/css/common.css"&gt;</code>
+                </div>
+                <p class="note">両方のページで同じナビゲーションバーが使えます！</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3>2. ページごとに違うスタイルを適用できる</h3>
+                <p>ホームページには <code>home.css</code>、説明ページには <code>about.css</code> を使います。</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3>3. ファイルを探しやすい</h3>
+                <p>すべての資材が <code>assets/</code> フォルダにまとまっているので、どこに何があるか分かりやすい！</p>
+            </div>
+        </div>
+
+        <div class="path-reference">
+            <h2>📝 パスの参照方法</h2>
+            
+            <div class="path-example">
+                <h3>HTMLからCSSを読み込む</h3>
+                <code>&lt;link rel="stylesheet" href="<span class="highlight">assets/css/</span>common.css"&gt;</code>
+                <p class="path-explanation">index.html → assets → css → common.css</p>
+            </div>
+            
+            <div class="path-example">
+                <h3>HTMLからJavaScriptを読み込む</h3>
+                <code>&lt;script src="<span class="highlight">assets/js/</span>common.js"&gt;&lt;/script&gt;</code>
+                <p class="path-explanation">index.html → assets → js → common.js</p>
+            </div>
+            
+            <div class="path-example">
+                <h3>HTMLから画像を読み込む</h3>
+                <code>&lt;img src="<span class="highlight">assets/images/</span>photo.jpg"&gt;</code>
+                <p class="path-explanation">index.html → assets → images → photo.jpg</p>
+            </div>
+        </div>
+
+        <div class="comparison-table">
+            <h2>📊 構成の比較</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>構成</th>
+                        <th>特徴</th>
+                        <th>向いているプロジェクト</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>基本的</strong></td>
+                        <td>すべて同じフォルダ</td>
+                        <td>小規模（1-3ページ）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>整理された</strong></td>
+                        <td>css/, js/, images/で分類</td>
+                        <td>中規模（3-10ページ）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>発展的</strong></td>
+                        <td>assets/で統一、ファイルを細分化</td>
+                        <td>大規模（10ページ以上）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <p>© 2025 ファイル構成サンプル</p>
+    </footer>
+    
+    <script src="assets/js/common.js"></script>
+</body>
+</html>
+

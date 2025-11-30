@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>発展的な構成 - ホーム</title>
+    <!-- assetsフォルダの中のcssフォルダからCSSを読み込む -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <h2 class="nav-title">📚 発展的な構成</h2>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">ホーム</a></li>
+                <li><a href="about.html">説明</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>🚀 発展的な構成</h1>
+            <p>このプロジェクトは、より複雑な構成で整理されています。</p>
+        </header>
+        
+        <div class="info-box">
+            <h2>フォルダ構成：</h2>
+            <pre>
+advanced/
+├── index.html       ← このページ
+├── about.html       ← 説明ページ
+└── assets/          ← 資材フォルダ
+    ├── css/
+    │   ├── common.css   ← 共通スタイル
+    │   ├── home.css     ← ホームページ用
+    │   └── about.css    ← 説明ページ用
+    ├── js/
+    │   ├── common.js    ← 共通処理
+    │   └── home.js      ← ホームページ用
+    └── images/
+        └── （画像ファイル）
+            </pre>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎨 複数のCSS</h3>
+                <p>共通のスタイルとページごとのスタイルを分けています</p>
+                <code>common.css + home.css</code>
+            </div>
+            <div class="feature-card">
+                <h3>📄 複数のHTML</h3>
+                <p>ページごとにHTMLファイルを作っています</p>
+                <code>index.html, about.html</code>
+            </div>
+            <div class="feature-card">
+                <h3>📁 assetsフォルダ</h3>
+                <p>すべての資材をassetsフォルダにまとめています</p>
+                <code>assets/css/, assets/js/</code>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎮 デモ：インタラクティブカード</h2>
+            <p>カードをクリックしてみてね！</p>
+            
+            <div class="card-grid">
+                <div class="interactive-card" data-number="1">
+                    <div class="card-front">
+                        <h3>カード 1</h3>
+                        <p>クリックして！</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>🎉</h3>
+                        <p>おめでとう！</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-card" data-number="2">
+                    <div class="card-front">
+                        <h3>カード 2</h3>
+                        <p>クリックして！</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>⭐</h3>
+                        <p>すごい！</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-card" data-number="3">
+                    <div class="card-front">
+                        <h3>カード 3</h3>
+                        <p>クリックして！</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>🚀</h3>
+                        <p>やったね！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h3>💡 ポイント：</h3>
+            <ul>
+                <li>大規模なプロジェクトに向いています</li>
+                <li>複数のページを持つウェブサイトが作れます</li>
+                <li>共通のスタイルとページ固有のスタイルを分けられます</li>
+                <li>チームで開発するときに管理しやすい</li>
+                <li>パスは深くなりますが、整理されています（例：assets/css/common.css）</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <p>© 2025 ファイル構成サンプル</p>
+    </footer>
+    
+    <!-- assetsフォルダの中のjsフォルダからJavaScriptを読み込む -->
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+</html>
+
