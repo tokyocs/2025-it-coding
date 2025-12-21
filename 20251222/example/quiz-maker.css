@@ -1,0 +1,655 @@
+/* ===================================
+   クイズメーカー - スタイルシート
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+
+/* CSS変数 */
+:root {
+    --primary-color: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --secondary-color: #06b6d4;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --bg-gradient-start: #0f172a;
+    --bg-gradient-mid: #1e1b4b;
+    --bg-gradient-end: #581c87;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ユーティリティ */
+.hidden {
+    display: none !important;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', 'Hiragino Sans', 'Meiryo', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-primary);
+}
+
+/* グリッド背景パターン */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ナビゲーションタブ */
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.nav-tab {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-tab.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* カード共通 */
+.creator-card,
+.preview-card,
+.myquiz-card,
+.tips-card,
+.export-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.creator-card h2,
+.preview-card h2,
+.myquiz-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.tips-card {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid var(--warning-color);
+}
+
+.tips-card h3 {
+    color: #92400e;
+    margin-bottom: 15px;
+}
+
+.tips-card ul {
+    list-style: none;
+    color: #78350f;
+}
+
+.tips-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* フォーム要素 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.code-textarea {
+    font-family: 'Courier New', monospace;
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #374151;
+}
+
+.code-textarea:focus {
+    border-color: var(--secondary-color);
+}
+
+.hint {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* 選択肢入力 */
+.options-inputs .options-label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.option-row input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--success-color);
+}
+
+.option-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.option-input {
+    flex: 1;
+}
+
+/* ボタン */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #d1d5db;
+}
+
+.btn-danger {
+    background: var(--error-color);
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #dc2626;
+}
+
+/* プレビューエリア */
+.preview-hint,
+.myquiz-hint,
+.export-hint {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.preview-area {
+    background: #f9fafb;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 200px;
+}
+
+.no-questions {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px;
+    line-height: 1.8;
+}
+
+/* プレビュー問題表示 */
+.preview-question {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.preview-category {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.preview-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.preview-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preview-option {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview-option:hover {
+    border-color: var(--primary-color);
+    background: #f5f3ff;
+}
+
+.preview-option.selected {
+    border-color: var(--primary-color);
+    background: #ede9fe;
+}
+
+.preview-option.correct {
+    border-color: var(--success-color);
+    background: #d1fae5;
+}
+
+.preview-option.incorrect {
+    border-color: var(--error-color);
+    background: #fee2e2;
+}
+
+.preview-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* プレビュー穴埋め */
+.preview-code {
+    background: #1f2937;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    color: #e5e7eb;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.preview-fill-input {
+    background: #374151;
+    border: 2px solid #4b5563;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fbbf24;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    min-width: 120px;
+}
+
+.preview-fill-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.preview-fill-input.correct {
+    border-color: var(--success-color);
+    background: #064e3b;
+}
+
+.preview-fill-input.incorrect {
+    border-color: var(--error-color);
+    background: #7f1d1d;
+}
+
+/* 解説表示 */
+.preview-explanation {
+    background: #fef3c7;
+    border-left: 4px solid var(--warning-color);
+    border-radius: 0 10px 10px 0;
+    padding: 15px;
+    margin-top: 20px;
+    display: none;
+}
+
+.preview-explanation.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.preview-explanation-title {
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 8px;
+}
+
+.preview-explanation-text {
+    color: #78350f;
+    line-height: 1.6;
+}
+
+/* クイズリスト */
+.quiz-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.quiz-item {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.quiz-item-content {
+    flex: 1;
+}
+
+.quiz-item-category {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+
+.quiz-item-text {
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.quiz-item-type {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+.quiz-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.quiz-item-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-item-btn.delete {
+    background: #fee2e2;
+    color: var(--error-color);
+}
+
+.quiz-item-btn.delete:hover {
+    background: var(--error-color);
+    color: white;
+}
+
+/* エクスポート */
+.export-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.export-textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    background: #1f2937;
+    color: #e5e7eb;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+/* 戻るリンク */
+.back-link {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.back-link a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.back-link a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* 成功メッセージ */
+.success-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--success-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+    z-index: 1000;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+    }
+
+    .nav-tab {
+        padding: 10px 15px;
+    }
+
+    .creator-card,
+    .preview-card,
+    .myquiz-card {
+        padding: 20px;
+    }
+
+    .option-row {
+        flex-wrap: wrap;
+    }
+
+    .option-input {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* フォーカス */
+.btn:focus,
+.nav-tab:focus,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 まとめクイズ - コーディング授業</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 まとめクイズ大会</h1>
+            <p class="subtitle">これまでの授業で学んだことを復習しよう！</p>
+        </header>
+
+        <!-- プログレスバー -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-text" id="progressText">0 / 15</span>
+        </div>
+
+        <!-- スコア表示 -->
+        <div class="score-display">
+            <span class="score-label">スコア:</span>
+            <span class="score-value" id="scoreValue">0</span>
+            <span class="score-total">/ 15</span>
+        </div>
+
+        <!-- クイズエリア -->
+        <div class="quiz-area" id="quizArea">
+            <!-- ここにクイズが動的に表示される -->
+        </div>
+
+        <!-- 結果画面 -->
+        <div class="result-screen" id="resultScreen" style="display: none;">
+            <div class="result-content">
+                <h2 class="result-title" id="resultTitle">クイズ完了！</h2>
+                <div class="result-score">
+                    <span class="final-score" id="finalScore">0</span>
+                    <span class="final-total">/ 15 問正解</span>
+                </div>
+                <p class="result-message" id="resultMessage"></p>
+                <div class="result-breakdown" id="resultBreakdown"></div>
+                <button class="restart-btn" id="restartBtn">🔄 もう一度挑戦する</button>
+            </div>
+        </div>
+
+        <!-- カテゴリ選択 -->
+        <div class="category-nav" id="categoryNav">
+            <button class="category-btn active" data-category="all">全部</button>
+            <button class="category-btn" data-category="html">HTML</button>
+            <button class="category-btn" data-category="css">CSS</button>
+            <button class="category-btn" data-category="js">JavaScript</button>
+            <button class="category-btn" data-category="files">ファイル構成</button>
+            <button class="category-btn" data-category="array">配列</button>
+        </div>
+
+        <!-- クイズメーカーへのリンク -->
+        <div class="maker-link">
+            <a href="quiz-maker.html" class="maker-btn">🛠️ 自分でクイズを作る</a>
+        </div>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p>📚 2025年 コーディング授業 第6回（最終回）</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛠️ クイズを作ろう - コーディング授業</title>
+    <link rel="stylesheet" href="quiz-maker.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🛠️ クイズを作ろう</h1>
+            <p class="subtitle">自分だけのクイズを作って、友達に出題してみよう！</p>
+        </header>
+
+        <!-- ナビゲーション -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="create">✏️ 作成する</button>
+            <button class="nav-tab" data-tab="preview">👀 プレビュー</button>
+            <button class="nav-tab" data-tab="myquiz">📋 マイクイズ</button>
+        </nav>
+
+        <!-- 作成タブ -->
+        <div class="tab-content" id="createTab">
+            <div class="creator-card">
+                <h2>📝 新しい問題を作る</h2>
+                
+                <div class="form-group">
+                    <label for="questionType">問題のタイプ</label>
+                    <select id="questionType" class="form-select">
+                        <option value="choice">選択式（4択）</option>
+                        <option value="fill">穴埋め式</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="questionCategory">カテゴリ</label>
+                    <select id="questionCategory" class="form-select">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                        <option value="files">ファイル構成</option>
+                        <option value="array">配列</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="questionText">問題文</label>
+                    <textarea id="questionText" class="form-textarea" placeholder="例：ページの一番大きな見出しを作るタグはどれ？"></textarea>
+                </div>
+
+                <!-- 選択式の入力欄 -->
+                <div id="choiceInputs" class="options-inputs">
+                    <p class="options-label">選択肢（正解にチェック ✓）</p>
+                    <div class="option-row">
+                        <input type="radio" name="correctAnswer" value="0" id="correct0" checked title="選択肢Aを正解にする">
+                        <label for="correct0" class="option-label">A</label>
+                        <input type="text" class="form-input option-input" id="option0" placeholder="選択肢A">
+                    </div>
+                    <div class="option-row">
+                        <input type="radio" name="correctAnswer" value="1" id="correct1" title="選択肢Bを正解にする">
+                        <label for="correct1" class="option-label">B</label>
+                        <input type="text" class="form-input option-input" id="option1" placeholder="選択肢B">
+                    </div>
+                    <div class="option-row">
+                        <input type="radio" name="correctAnswer" value="2" id="correct2" title="選択肢Cを正解にする">
+                        <label for="correct2" class="option-label">C</label>
+                        <input type="text" class="form-input option-input" id="option2" placeholder="選択肢C">
+                    </div>
+                    <div class="option-row">
+                        <input type="radio" name="correctAnswer" value="3" id="correct3" title="選択肢Dを正解にする">
+                        <label for="correct3" class="option-label">D</label>
+                        <input type="text" class="form-input option-input" id="option3" placeholder="選択肢D">
+                    </div>
+                </div>
+
+                <!-- 穴埋め式の入力欄 -->
+                <div id="fillInputs" class="fill-inputs hidden">
+                    <div class="form-group">
+                        <label for="codeTemplate">コードテンプレート（穴埋め部分を _____ で書く）</label>
+                        <textarea id="codeTemplate" class="form-textarea code-textarea" placeholder="例：&lt;_____ rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;"></textarea>
+                        <p class="hint">💡 ヒント：穴埋め部分を「_____」（アンダースコア5つ）で書いてね</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="correctFill">正解</label>
+                        <input type="text" id="correctFill" class="form-input" placeholder="例：link">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="explanation">解説（なぜこれが正解？）</label>
+                    <textarea id="explanation" class="form-textarea" placeholder="例：<link>タグでCSSファイルを読み込みます。"></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="addQuestionBtn">➕ 問題を追加</button>
+                    <button class="btn btn-secondary" id="clearFormBtn">🗑️ クリア</button>
+                </div>
+            </div>
+
+            <!-- 作成のヒント -->
+            <div class="tips-card">
+                <h3>💡 いい問題を作るコツ</h3>
+                <ul>
+                    <li>✅ 問題文は<strong>わかりやすく</strong>書こう</li>
+                    <li>✅ 選択肢は<strong>似ているものを混ぜる</strong>と難しくなる</li>
+                    <li>✅ 解説には<strong>なぜ正解か</strong>を書こう</li>
+                    <li>✅ 授業で学んだことから問題を作ってみよう</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- プレビュータブ -->
+        <div class="tab-content hidden" id="previewTab">
+            <div class="preview-card">
+                <h2>👀 プレビュー</h2>
+                <p class="preview-hint">作った問題がどう見えるか確認できます</p>
+                
+                <div id="previewArea" class="preview-area">
+                    <p class="no-questions">まだ問題がありません。<br>「作成する」タブで問題を追加してね！</p>
+                </div>
+
+                <div class="btn-group hidden" id="previewBtns">
+                    <button class="btn btn-primary" id="checkPreviewBtn">答えを確認</button>
+                    <button class="btn btn-secondary hidden" id="nextPreviewBtn">次の問題</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- マイクイズタブ -->
+        <div class="tab-content hidden" id="myquizTab">
+            <div class="myquiz-card">
+                <h2>📋 マイクイズ</h2>
+                <p class="myquiz-hint">作った問題の一覧です</p>
+                
+                <div id="quizList" class="quiz-list">
+                    <p class="no-questions">まだ問題がありません。</p>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="exportBtn" disabled>📤 コードを出力</button>
+                    <button class="btn btn-danger" id="clearAllBtn" disabled>🗑️ 全部削除</button>
+                </div>
+            </div>
+
+            <!-- 出力エリア -->
+            <div class="export-card hidden" id="exportCard">
+                <h3>📤 JavaScriptコード</h3>
+                <p class="export-hint">このコードを script.js にコピーして追加できます！</p>
+                <textarea id="exportCode" class="export-textarea" readonly title="出力されたJavaScriptコード" aria-label="出力されたJavaScriptコード"></textarea>
+                <button class="btn btn-secondary" id="copyCodeBtn">📋 コピーする</button>
+            </div>
+        </div>
+
+        <!-- メインクイズへのリンク -->
+        <div class="back-link">
+            <a href="index.html">← メインクイズに戻る</a>
+        </div>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p>📚 2025年 コーディング授業 第6回（最終回）</p>
+        </footer>
+    </div>
+
+    <script src="quiz-maker.js"></script>
+</body>
+</html>
+
